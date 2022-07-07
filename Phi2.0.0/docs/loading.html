@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Phigros Simulator test</title>
+	<!-- <script src="//fastly.jsdelivr.net/npm/gsap@3.7.1/dist/gsap.min.js"></script> -->
+	<style>
+		@import url("https://fonts.loli.net/css?family=Mina");
+
+		body {
+			background-color: black;
+		}
+
+		#stage {
+			display: block;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		svg {
+			width: 40vmin;
+			height: 40vmin;
+			font-family: Mina;
+			transition: all 1s linear;
+			opacity: 1;
+		}
+
+		#circle {
+			/*transform: translate(50%, 50%) rotate(-90deg);*/
+			transition: all ease-out 1s;
+			stroke-dasharray: 352, 352;
+			stroke-dashoffset: 352;
+		}
+
+		#text {
+			transition: all ease-out 1s;
+			animation: twinkling 2s linear infinite;
+		}
+
+		/*svg:hover #circle {
+			stroke-dashoffset: 0;
+		}
+
+		svg:hover #text {
+		}*/
+		@keyframes twinkling {
+			0% {
+				opacity: 0.2;
+			}
+
+			50% {
+				opacity: 1;
+			}
+
+			100% {
+				opacity: 0.2;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="stage">
+		<svg id="svg" viewBox="0 0 128 128">
+			<path id="circle" d="M64,8a56,56,0,1,1,0,112a56,56,0,1,1,0-112" fill="transparent" stroke-width="2" stroke="#fff" />
+			<!-- <circle id="circle" cx="0" cy="0" r="56" fill="transparent" stroke-width="8" stroke="#fff" /> -->
+			<g fill="#fff" stroke="none" dominant-baseline="middle" text-anchor="middle">
+				<text id="text" x="64" y="64" textlength="80" font-size="16">Loading</text>
+				<!-- <text id="text" x="64" y="96" font-size="16">50%</text> -->
+			</g>
+		</svg>
+	</div>
+	<script>
+		const svg = document.querySelector("#svg");
+		const circle = document.querySelector("#circle");
+		const text = document.querySelector("#text");
+		let score = 0;
+		const qwq = setInterval(() => {
+			svg.style.opacity = 1;
+			score += Math.random() * 0.15;
+			if (score >= 1) {
+				score = 1;
+				svg.style.opacity = 0;
+				svg.style.transitionDelay = "0.5s";
+				clearInterval(qwq);
+			}
+			circle.style.strokeDashoffset = 352 * (1 - score);
+		}, 1000);
+	</script>
+</body>
+
+</html>

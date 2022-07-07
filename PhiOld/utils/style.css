@@ -1,0 +1,204 @@
+@import url("//fonts.loli.net/css?family=Mina");
+
+@font-face {
+	font-family: 'Mina';
+	font-style: normal;
+	font-weight: regular;
+	/* IE9 Compat Modes */
+	src: url('//lib.baomitu.com/fonts/mina/mina-regular.eot');
+	src: local('Mina'), local('Mina-Normal'),
+		/* IE6-IE8 */
+		url('//lib.baomitu.com/fonts/mina/mina-regular.eot?#iefix') format('embedded-opentype'),
+		/* Super Modern Browsers */
+		url('//lib.baomitu.com/fonts/mina/mina-regular.woff2') format('woff2'),
+		/* Modern Browsers */
+		url('//lib.baomitu.com/fonts/mina/mina-regular.woff') format('woff'),
+		/* Safari, Android, iOS */
+		url('//lib.baomitu.com/fonts/mina/mina-regular.ttf') format('truetype'),
+		/* Legacy iOS */
+		url('//lib.baomitu.com/fonts/mina/mina-regular.svg#Mina') format('svg');
+}
+
+
+* {
+	outline: none;
+}
+
+::selection {
+	background-color: rgba(147, 107, 255, 0.286);
+}
+
+::-moz-selection {
+	background-color: rgba(147, 107, 255, 0.286);
+}
+
+:root {
+	text-align: center;
+}
+
+body {
+  width:100%;
+  height:100%;
+  background:url('./src/bg.png');
+  background-position-x:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+}
+
+a {
+	text-decoration: none;
+	color: #f00;
+	border-radius: 25px;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+a:hover,
+input[type="checkbox"]+label:hover,
+input[type="radio"]+label:hover {
+	background-color: rgba(60, 251, 76, 0.286);
+}
+
+a:active {
+	background-color: rgba(25, 240, 43, 0.427);
+}
+
+button,
+input[type="button"],
+input[type="file"]+label {
+	background-color: #2fc7ff;
+	color: #fff;
+	border: none;
+	border-radius: 25px;
+	font-size: 0.9em;
+	padding: 0.1em 0.6em;
+	margin: 0.1em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="file"]+label:hover {
+	background-color: #39b9e8;
+}
+
+button:active,
+input[type="button"]:active,
+input[type="file"]+label:active {
+	background-color: #3996b9;
+}
+
+button,
+label,
+input[type="button"] {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+input[type="checkbox"],
+input[type="file"],
+input[type="radio"],
+.hide {
+	display: none;
+}
+
+.i-pause::after {
+	font: 1em icomoon;
+	content: "\e900";
+}
+
+.i-settings::after {
+	font: 1em icomoon;
+	content: "\e909";
+}
+
+input[type="checkbox"]+label::before {
+	font: 0.9em icomoon;
+	content: "\e907";
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+
+input[type="checkbox"]:checked+label::before {
+	font: 0.9em icomoon;
+	content: "\e906";
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+
+input[type="radio"]+label::before {
+	font: 0.9em icomoon;
+	content: "\e903";
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+
+input[type="radio"]:checked+label::before {
+	font: 0.9em icomoon;
+	content: "\e908";
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+
+textarea,
+input[type="text"] {
+	border: 1px solid #888;
+	border-radius: 15px;
+	padding: 0.2em;
+	margin: 1px;
+}
+
+.main {
+	display: none;
+}
+
+.title {
+	color: #00f;
+}
+
+.info,
+strong.error {
+	color: #f00;
+}
+
+strong.warning {
+	color: #fa0;
+}
+
+strong.accept {
+	color: #080;
+}
+
+.index {
+	width: 60vw;
+	max-width: 270px;
+	margin: auto;
+}
+
+.index a {
+	display: block;
+	border: 2px solid #37723a;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.info {
+	font-size: 1em;
+	line-height: 1.33em;
+}
+
+.profile {
+	font-size: 0.8em;
+	line-height: 1.5em;
+}
+
+.disabled {
+	opacity: 0.2;
+	pointer-events: none;
+}
+
+.fade {
+	opacity: 0 !important;
+	visibility: hidden;
+}
